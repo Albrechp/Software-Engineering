@@ -67,24 +67,6 @@ public class BinaryTree
         	return lowestCommonAncestor(findParent(node1), node2);
         }
     }
-    
-    public static void print(Node node, String s)
-    {
-        
-        System.out.print(node.getKey());
-        
-        if (node.getLeft() != null)
-        {
-        	System.out.print("---");
-        	print(node.getLeft(), "");
-        }
-        if (node.getRight() != null)
-        {
-        	System.out.print("\n" + s + " |--");
-        	print(node.getRight(), "    ");
-        }
-        
-    }
 }
 
 class Node {
