@@ -3,12 +3,6 @@ public class LowestCommonAncestor {
 
 	public static void main(String[] args) {
 		
-
-		System.out.println("hallo world");
-	}
-	
-	public static void t()
-	{
 		Node n1 = new Node(1);
 	    Node n2 = new Node(4);
 	    Node n3 = new Node(2);
@@ -20,7 +14,8 @@ public class LowestCommonAncestor {
 	    tree.add(n2, n3, "left");  
 	    tree.add(n2, n4, "right");  
 	        
-	    tree.print(tree.getRoot(), "");
+	    //tree.print(tree.getRoot(), "");
+	    
+	    System.out.println(tree.lowestCommonAncestor(n4, n1).getKey());
 	}
-
 }

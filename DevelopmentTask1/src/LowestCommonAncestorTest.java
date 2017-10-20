@@ -42,4 +42,16 @@ public class LowestCommonAncestorTest extends LowestCommonAncestor{
 	}
 
 
+	@Test
+	public void testFindParent() {
+
+		  Assert.assertTrue(true);
+	}
+	
+	@Test
+	public void testLowestCommonAncestor() {
+
+		  Assert.assertTrue(true);
+	}
+
 }
