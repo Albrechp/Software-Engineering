@@ -68,7 +68,7 @@ public class BinaryTree
         }
     }
     
-/*    public static void print(Node node, String s)
+    public static void print(Node node, String s)
     {
         
         System.out.print(node.getKey());
@@ -84,7 +84,7 @@ public class BinaryTree
         	print(node.getRight(), "    ");
         }
         
-    }*/
+    }
 }
 
 class Node {
