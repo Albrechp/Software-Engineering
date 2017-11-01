@@ -14,21 +14,77 @@ public class DirectedAcyclicGraph {
     	child.addParent(parent);
     }
     
+    public int hasDescendant(Node node, Node matchNode)
+    {
+    	if (node == matchNode)
+    	{
+    		return 0;
+    	}
+    	else
+    	{
+    		int i = 0 ;
+	    	Node [] children = node.getChildren();
+	    	int match = -1;
+	    	
+	    	while (i < children.length && match == -1)
+	    	{
+	    		if (children[i] == matchNode)
+	    		{
+	    			match = 1;
+	    		}
+	    		else
+	    		{
+	    			match = hasDescendant(children[i], matchNode);
+	    			
+	    			if (match != -1)
+	    	    	{
+	    	    		match = match + 1;
+	    	    	}
+	    		}
+	    		
+	    		i ++;
+	    	}
+	    		
+	    	return match;	
+    	}
+    	
+    }
+    
     public Node lowestCommonAncestor(Node node1, Node node2)
     {
-//        if (node1 == node2 || lookForNode(node1, node2) != null)
-//        {
-//        	return node1;
-//        }
-//        else if (findParent(node1) == null)
-//        {
-//        	return null;
-//        }
-//        else 
-//        {
-//        	return lowestCommonAncestor(findParent(node1), node2);
-//        }
-    	return null;
+    	if (hasDescendant(node1, node2) >= 0)
+    	{
+    		return node1;
+    	}
+    	else if (node1.getParents().length == 0)
+    	{
+    		return null;
+    	}
+    	else 
+    	{
+    	  Node[] parents = node1.getParents();
+    	  
+    	  Node ancestor = null;
+    	  int descendantCount = -1;
+    	  
+    	  for (int i = 0 ;( i < parents.length ); i ++)
+    	  {
+    		 Node pNode = lowestCommonAncestor(parents[i], node2);
+
+    		 if (pNode != null && hasDescendant(pNode, node2) != -1)
+    		 {
+    			 int pCount = hasDescendant(pNode, node1);
+    			 
+     			 if (pCount < descendantCount || descendantCount == -1)
+    			 {
+     				ancestor = pNode; 
+    				descendantCount = pCount;
+    			 } 
+    		 }
+    	  }
+
+    	  return ancestor;
+    	}
     }
 }
 
