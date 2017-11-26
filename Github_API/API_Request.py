@@ -1,0 +1,38 @@
+from github3 import login
+
+gh = login(token='e56394fd4e72d927b1db34784bc42ddab58d22c9')
+
+sigmavirus24 = gh.user()
+
+print("login:               " + str(sigmavirus24.login))
+print("id:                  " + str(sigmavirus24.id))
+print("avatar_url:          " + str(sigmavirus24.avatar_url))
+print("gravatar_id:         " + str(sigmavirus24.gravatar_id))
+print("html_url:            " + str(sigmavirus24.html_url))
+print("followers_url:       " + str(sigmavirus24.followers_url))
+print("subscriptions_url:   " + str(sigmavirus24.subscriptions_url))
+print("organizations_url:   " + str(sigmavirus24.organizations_url))
+print("repos_url:           " + str(sigmavirus24.repos_url))
+print("received_events_url: " + str(sigmavirus24.received_events_url))
+print("type:                " + str(sigmavirus24.type))
+print("name:                " + str(sigmavirus24.name))
+print("company:             " + str(sigmavirus24.company))
+print("blog:                " + str(sigmavirus24.blog))
+print("location:            " + str(sigmavirus24.location))
+print("email:               " + str(sigmavirus24.email))
+print("hireable:            " + str(sigmavirus24.hireable))
+print("bio:                 " + str(sigmavirus24.bio))
+print("public_repos:        " + str(sigmavirus24.public_repos))
+print("public_gists:        " + str(sigmavirus24.public_gists))
+print("followers:           " + str(sigmavirus24.followers))
+print("following:           " + str(sigmavirus24.following))
+print("created_at:          " + str(sigmavirus24.created_at))
+print("total_private_repos: " + str(sigmavirus24.total_private_repos))
+print("owned_private_repos: " + str(sigmavirus24.owned_private_repos))
+print("disk_usage:          " + str(sigmavirus24.disk_usage))
+print("plan.name:           " + str(sigmavirus24.plan.name))
+print("plan.space:          " + str(sigmavirus24.plan.space))
+print("plan.collaborators:  " + str(sigmavirus24.plan.collaborators))
+print("plan.private_repos:  " + str(sigmavirus24.plan.private_repos))
+
+
